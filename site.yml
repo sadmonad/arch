@@ -1,0 +1,6 @@
+---
+- name: Arch Linux setup playbook
+  hosts: '{{ env }}'
+  become: true
+  roles:
+    - role: common

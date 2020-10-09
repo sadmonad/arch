@@ -1,0 +1,7 @@
+Vagrant.configure("2") do |config|
+  config.vm.define "arch" do |arch|
+    arch.vm.box = "archlinux/archlinux"
+    arch.vm.host_name = "arch"
+    arch.vm.network "private_network", ip: "192.168.3.2"
+  end
+end

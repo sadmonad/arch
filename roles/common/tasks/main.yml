@@ -1,0 +1,23 @@
+---
+- name: Set up packages keys
+  command: 'pacman-key --init'
+
+- name: Populate keys
+  command: 'pacman-key --populate archlinux'
+
+- name: Update package database
+  pacman:
+    update_cache: true
+
+- name: Install packages
+  pacman:
+    name:
+    - vim
+    - neofetch
+    - python3
+    - curl
+    - httpie
+    - sudo
+    - htop
+    - the_silver_searcher
+    - tree
