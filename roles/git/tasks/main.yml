@@ -1,0 +1,4 @@
+- name: Place git config
+  template:
+    src: gitconfig.j2
+    dest: /etc/gitconfig
