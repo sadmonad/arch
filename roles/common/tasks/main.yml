@@ -13,6 +13,7 @@
   pacman:
     name:
     - vim
+    - zsh
     - neofetch
     - python3
     - curl
@@ -21,3 +22,16 @@
     - htop
     - the_silver_searcher
     - tree
+    - git
+    - docker
+
+- name: Add group
+  group:
+    name: '{{ group }}'
+
+- name: Add user
+  user:
+    name: '{{ user }}'
+    group: '{{ group }}'
+    password: '{{ password }}'
+    shell: /bin/zsh
