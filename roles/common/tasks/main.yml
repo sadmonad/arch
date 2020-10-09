@@ -24,6 +24,7 @@
     - tree
     - git
     - docker
+    - xclip
 
 - name: Add group
   group:
@@ -35,3 +36,11 @@
     group: '{{ group }}'
     password: '{{ password }}'
     shell: /bin/zsh
+
+- name: Place aliases
+  copy:
+    src: .aliases
+    dest: '/home/{{ user }}/.aliases'
+    owner: '{{ user }}'
+    group: '{{ group }}'
+    mode: '0600'
