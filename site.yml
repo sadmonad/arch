@@ -6,3 +6,4 @@
     - role: common
     - role: vim
     - role: git
+    - role: zsh

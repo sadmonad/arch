@@ -1,0 +1,17 @@
+- name: Check whether OMZSH is installed
+  stat:
+    path: '/home/{{ user }}/.oh-my-zsh'
+  register: oh_my_zsh
+
+- name: Install OMZSH
+  shell: 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh) --unattended"'
+  become_user: '{{ user }}'
+  when: oh_my_zsh.stat.exists == false
+
+- name: Place zsh config
+  template:
+    src: .zshrc.j2
+    dest: '/home/{{ user }}/.zshrc'
+    owner: '{{ user }}'
+    group: '{{ group }}'
+    mode: '0600'
