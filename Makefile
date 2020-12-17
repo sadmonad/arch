@@ -13,7 +13,7 @@ install:
 	$(VENV)/pip install -r requirements.txt
 prepare:
 	touch host
-	echo '[local]\n arch ansible_host=$(VAGRANT_IP)' > host
+	printf "[local]\narch ansible_host=$(VAGRANT_IP)" > local
 up:
 	vagrant up --provider=virtualbox
 login:
