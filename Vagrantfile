@@ -4,4 +4,6 @@ Vagrant.configure("2") do |config|
     arch.vm.host_name = "arch"
     arch.vm.network "private_network", ip: "192.168.3.2"
   end
+  config.vm.provision "shell",
+    inline: "/bin/sh -c 'pacman -Sy && pacman -S --noconfirm python'"
 end
