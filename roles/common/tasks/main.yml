@@ -58,3 +58,9 @@
     owner: '{{ user }}'
     group: '{{ group }}'
     mode: '0600'
+
+- name: Add lightdm to autorun
+  service:
+    name: lightdm
+    state: started
+    enabled: true
