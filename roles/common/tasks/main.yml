@@ -11,26 +11,7 @@
 
 - name: Install packages
   pacman:
-    name:
-      - vim
-      - zsh
-      - neofetch
-      - python
-      - curl
-      - httpie
-      - sudo
-      - htop
-      - the_silver_searcher
-      - tree
-      - git
-      - docker
-      - xclip
-      - ipython
-      - xorg
-      - lightdm
-      - lightdm-gtk-greeter
-      - xfce4
-      - terminator
+    name: '{{ packages }}'
 
 - name: Add group
   group:

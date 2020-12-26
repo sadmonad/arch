@@ -2,3 +2,23 @@
 group: sadmonad
 user: sadmonad
 password: $6$Lq2.hIhouPDVypnK$FBycL6pKREaWDhyubiuVD1iAXWX6OncXAAEU4Dflrj8IZ1ldAgkajkA0OvJ708n3QcxcV31vFQu3hC8mQYmzC0
+packages:
+  - vim
+  - zsh
+  - neofetch
+  - python
+  - curl
+  - httpie
+  - sudo
+  - htop
+  - the_silver_searcher
+  - tree
+  - git
+  - docker
+  - xclip
+  - ipython
+  - xorg
+  - lightdm
+  - lightdm-gtk-greeter
+  - xfce4
+  - terminator
