@@ -17,11 +17,17 @@
   group:
     name: '{{ group }}'
 
+- name: Create home folders
+  file:
+    dest: '/etc/skel/{{ item }}'
+    state: directory
+  with_items: '{{ home_dirs }}'
+
 - name: Add user
   user:
     name: '{{ user }}'
     group: '{{ group }}'
-    groups: wheel
+    groups: wheel,docker
     password: '{{ password }}'
     shell: /bin/zsh
 
@@ -45,3 +51,19 @@
     name: lightdm
     state: started
     enabled: true
+
+- name: Add docker to autorun
+  service:
+    name: docker
+    state: started
+    enabled: true
+
+- name: Create config dir for i3status
+  file:
+    dest: '/home/{{ user }}/.config/i3status'
+    state: directory
+
+- name: Place i3status config
+  copy:
+    src: i3status.conf
+    dest: '/home/{{ user }}/.config/i3status/config'
